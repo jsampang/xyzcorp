@@ -1,0 +1,55 @@
+<li><a href="/folder/<%= component_type =%>/<%= folder.key =%>"><i class="fa fa-file-o fa-fw"></i><%= folder.name =%></a></li>
+	
+	
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/"><img src="<%= include('a304a855362906c1bac940fdc71667f4') =%>" class="logo"></a>
+</div>
+<div class="navbar-default sidebar" role="navigation">
+<div class="sidebar-nav navbar-collapse">
+<ul class="nav" id="side-menu">
+
+<% for folder in folderPath %>
+<li><a href="/folder/<%= component_type =%>/<%= folder.key =%>"><i class="fa fa-file-o fa-fw"></i><%= folder.name =%></a></li>
+<% else %>
+    Folders could not be found
+<% endfor %>
+
+<% for child in childrenFolders %>
+<li style="margin-left:20px"><a href="/folder/<%= component_type =%>/<%= child.key =%>"><i class="fa fa-file fa-fw"></i><%= child.name =%></a></li>
+<% endfor %>
+
+<% for file in entities %>
+<li style="margin-left:20px"><a href="/<%= component_type =%>/show/<%= file.key =%>"><i class="fa fa-file fa-fw"></i><%= file.name =%></a></li>
+<% endfor %>
+
+
+</ul>
+
+<ul class="nav" id="side-menu">
+<li style="margin-top: 20px"><a href="#"><i class=""></i></a></li>
+<li><a href="/page"><i class="fa fa-file-o fa-fw"></i> Pages</a></li>
+<li><a href="/template"><i class="fa fa-object-group fa-fw"></i> Templates</a></li>
+<li><a href="/block"><i class="fa fa-th fa-fw"></i> Block</a></li>
+<li><a href="/asset"><i class="fa fa-picture-o fa-fw"></i> Assets</a></li>
+</ul>
+
+<ul>
+<li>aa
+  <ul>
+     <li>aa 2</li>
+  </ul>
+
+</li>
+<li>bb</li>
+</ul>
+
+</div>
+</div>
+</nav>
